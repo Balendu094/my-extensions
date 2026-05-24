@@ -4,103 +4,257 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ColorPro – Privacy Policy</title>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
+  :root {
+    --bg: #F8FAFC;
+    --surface: #FFFFFF;
+    --text: #0F172A;
+    --muted: #64748B;
+    --accent: #6366F1;
+    --accent-hover: #4F46E5;
+    --border: #E2E8F0;
+    --radius: 16px;
+  }
+  
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    background: #f9f9fb;
-    color: #333;
-    line-height: 1.75;
+    font-family: 'Onest', system-ui, -apple-system, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
   }
+  
   header {
-    background: linear-gradient(135deg, #7c6ef7, #5b8ef7);
+    background: linear-gradient(135deg, #6366F1 0%, #8B5CF6 100%);
     color: white;
-    padding: 40px 20px;
+    padding: 80px 20px 60px;
     text-align: center;
+    position: relative;
+    overflow: hidden;
   }
-  header h1 { font-size: 28px; margin-bottom: 6px; }
-  header p  { opacity: 0.85; font-size: 14px; }
+  
+  .header-bg {
+    position: absolute;
+    top: -50%; left: -10%; width: 120%; height: 200%;
+    background: radial-gradient(circle at center, rgba(255,255,255,0.1) 0%, transparent 60%);
+    pointer-events: none;
+  }
+  
+  header h1 { 
+    font-size: 42px; 
+    font-weight: 800;
+    margin-bottom: 12px; 
+    letter-spacing: -1px;
+    position: relative;
+    z-index: 2;
+  }
+  
+  header p { 
+    font-size: 18px; 
+    opacity: 0.9; 
+    font-weight: 500;
+    position: relative;
+    z-index: 2;
+  }
+  
   main {
-    max-width: 720px;
-    margin: 40px auto;
-    padding: 0 20px 60px;
+    max-width: 800px;
+    margin: -30px auto 60px;
+    padding: 0 20px;
+    position: relative;
+    z-index: 3;
   }
-  section {
-    background: white;
-    border-radius: 10px;
-    padding: 28px 32px;
-    margin-bottom: 20px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  
+  .content-wrapper {
+    background: var(--surface);
+    border-radius: var(--radius);
+    padding: 48px;
+    box-shadow: 0 10px 40px rgba(15, 23, 42, 0.05), 0 1px 3px rgba(15, 23, 42, 0.03);
+    border: 1px solid rgba(255,255,255,0.8);
   }
-  h2 {
-    font-size: 16px;
-    color: #7c6ef7;
-    margin-bottom: 12px;
+
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    background: #EEF2FF;
+    color: var(--accent);
+    border-radius: 30px;
+    padding: 6px 14px;
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 32px;
     text-transform: uppercase;
     letter-spacing: 0.5px;
   }
-  p { font-size: 15px; color: #555; }
-  ul { padding-left: 20px; color: #555; font-size: 15px; }
-  ul li { margin-bottom: 8px; }
-  a { color: #7c6ef7; text-decoration: none; }
-  .badge {
-    display: inline-block;
-    background: #f0eeff;
-    color: #7c6ef7;
-    border-radius: 20px;
-    padding: 3px 12px;
-    font-size: 13px;
-    font-weight: 600;
+  
+  section { margin-bottom: 40px; }
+  section:last-child { margin-bottom: 0; }
+  
+  h2 {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--text);
     margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  h2::before {
+    content: '';
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    background: var(--accent);
+    border-radius: 50%;
+  }
+  
+  p { 
+    font-size: 16px; 
+    color: var(--muted); 
+    margin-bottom: 16px;
+  }
+  
+  .permission-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin-top: 20px;
+  }
+  
+  .perm-card {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  
+  .perm-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(15,23,42,0.04);
+  }
+  
+  .perm-title {
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 15px;
+  }
+  
+  .perm-title code {
+    background: #E2E8F0;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 13px;
+    color: #334155;
+    font-family: monospace;
+  }
+  
+  .perm-desc {
+    font-size: 14.5px;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  a { 
+    color: var(--accent); 
+    text-decoration: none; 
+    font-weight: 600;
+    transition: color 0.2s;
+  }
+  
+  a:hover { color: var(--accent-hover); }
+
+  footer {
+    text-align: center;
+    padding: 40px 20px;
+    color: var(--muted);
+    font-size: 14px;
+    font-weight: 500;
+  }
+
+  @media (min-width: 640px) {
+    .permission-grid { grid-template-columns: 1fr 1fr; }
   }
 </style>
 </head>
 <body>
 
 <header>
-  <h1>🎨 ColorPro</h1>
-  <p>Privacy Policy</p>
+  <div class="header-bg"></div>
+  <h1>ColorPro</h1>
+  <p>Privacy Policy &amp; Data Usage</p>
 </header>
 
 <main>
+  <div class="content-wrapper">
+    <div style="text-align: center;">
+      <span class="badge">Effective Date: May 2026</span>
+    </div>
 
-  <section>
-    <span class="badge">Last updated: May 2026</span>
-    <h2>Summary</h2>
-    <p>ColorPro <strong>does not collect, store, or share</strong> any personal data. Everything stays on your device only.</p>
-  </section>
+    <section>
+      <h2>Our Commitment to Privacy</h2>
+      <p>ColorPro is designed with a privacy-first approach. We believe that developer and design tools should be fast, secure, and entirely local. <strong>We do not collect, store, transmit, or sell any of your personal data.</strong> Everything you do in ColorPro stays on your device.</p>
+    </section>
 
-  <section>
-    <h2>Data Collection</h2>
-    <p>We do not collect any personal information, usage data, analytics, or telemetry of any kind. No data is ever sent to any server.</p>
-  </section>
+    <section>
+      <h2>No Data Collection or Tracking</h2>
+      <p>We do not use any third-party analytics (like Google Analytics), crash reporting tools, advertising networks, or tracking scripts. No telemetry or usage statistics of any kind are ever sent to external servers.</p>
+    </section>
 
-  <section>
-    <h2>Local Storage Only</h2>
-    <p>Color history and saved palettes are stored <strong>locally on your device</strong> using Chrome's built-in storage API. This data never leaves your browser and is never shared with anyone.</p>
-  </section>
+    <section>
+      <h2>Local Storage Explained</h2>
+      <p>Any data generated by using the extension—such as your picked color history, custom saved palettes, and UI theme preferences—is saved <strong>locally on your machine</strong> using the browser's built-in <code>chrome.storage.local</code> API. This data never leaves your browser and can be completely wiped at any time using the "Clear All Data" button in the extension settings.</p>
+    </section>
 
-  <section>
-    <h2>Permissions Explained</h2>
-    <ul>
-      <li><strong>activeTab</strong> — Activate color picker on current tab only</li>
-      <li><strong>scripting</strong> — Inject the color picker tool into the page</li>
-      <li><strong>storage</strong> — Save your color history locally on device</li>
-      <li><strong>clipboardWrite</strong> — Copy picked color to your clipboard</li>
-    </ul>
-  </section>
+    <section>
+      <h2>Required Permissions &amp; Usage</h2>
+      <p>To provide its core functionality, ColorPro requires specific browser permissions. Here is exactly why we need them and how they are used:</p>
+      
+      <div class="permission-grid">
+        <div class="perm-card">
+          <div class="perm-title"><code>activeTab</code></div>
+          <div class="perm-desc">Allows the extension to temporarily access the current webpage only when you explicitly click the extension icon. We use this to inject the sampling cursor and take a viewport screenshot so you can pick colors.</div>
+        </div>
+        
+        <div class="perm-card">
+          <div class="perm-title"><code>scripting</code></div>
+          <div class="perm-desc">Required to inject our UI elements (like the magnifier, audit HUD, and CSS tooltips) into the webpage you are actively inspecting.</div>
+        </div>
 
-  <section>
-    <h2>Third Parties</h2>
-    <p>ColorPro does not use any third-party services, analytics tools, advertising networks, or tracking scripts.</p>
-  </section>
+        <div class="perm-card">
+          <div class="perm-title"><code>storage</code></div>
+          <div class="perm-desc">Allows the extension to save your preferences (Dark/Light mode, default export format), color history, and custom palettes directly to your hard drive.</div>
+        </div>
 
-  <section>
-    <h2>Contact</h2>
-    <p>Any questions? Email us at <a href="mailto:colorpro.extension@gmail.com">colorpro.extension@gmail.com</a></p>
-  </section>
+        <div class="perm-card">
+          <div class="perm-title"><code>clipboardWrite</code></div>
+          <div class="perm-desc">Enables the extension to copy picked HEX/RGB codes, JSON audit reports, and extracted CSS snippets directly to your system clipboard for easy pasting.</div>
+        </div>
+      </div>
+    </section>
 
+    <section>
+      <h2>Third-Party Services</h2>
+      <p>ColorPro operates 100% offline and independently. It does not connect to any external APIs or third-party web services.</p>
+    </section>
+
+    <section>
+      <h2>Contact Us</h2>
+      <p>If you have any questions or concerns regarding this Privacy Policy or how your data is handled, please feel free to reach out to us at <a href="mailto:colorpro.extension@gmail.com">colorpro.extension@gmail.com</a>.</p>
+    </section>
+  </div>
 </main>
+
+<footer>
+  &copy; 2026 ColorPro Extension. All rights reserved.
+</footer>
 
 </body>
 </html>
